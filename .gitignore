@@ -2,4 +2,4 @@
 data/
 node_modules/
 scripts/
-
+npm-debug.log
