@@ -25,7 +25,7 @@ app.get('/db', (req, res) => {
         if (err) {
             res.send('Cannot connect to db! ' + err);
         }
-        client.query('SELECT table_schema, table_name FROM information_schema.tables;', function (err, result) {
+        client.query('SELECT table_schema, table_name FROM information_schema.tables where table_schema="public";', function (err, result) {
             done();
             if (err) {
                 res.send('Cannot retrieve data! ' + err);
