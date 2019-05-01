@@ -7,20 +7,20 @@ const bodyParser = require('body-parser');
 const pg = require('pg');
 
 const app = new express();
-const pool = new pg.Pool({
+/*const pool = new pg.Pool({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
     database: process.env.DB_NAME,
     password: process.env.DB_PASS,
     port: process.env.DB_PORT
-});
+});*/
 
 // register JSON parser middlewear
 app.use(bodyParser.json());
 
 // routes
 app.get('/', (req, res) => {
-    res.send('Welcome to the DB app!<br>'+process.env.DATABASE_URL);
+    res.send('Welcome to the DB app!');
 });
 
 app.get('/db', (req, res) => {
@@ -39,9 +39,9 @@ app.get('/db', (req, res) => {
 });
 
 let port = process.env.PORT;
-if (port == null || port == "") {
+if (port == NULL || port == "") {
     port = 8000;
 }
 app.listen(port, () => {
-    console.log('Server up!');
+    //console.log('Server up!');
 });
