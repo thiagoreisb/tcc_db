@@ -4,7 +4,7 @@
   "description": "Simple application to connect to db",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "DATABASE_URL=$(heroku config:get DATABASE_URL -a immense-retreat-94183) node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Thiago R Bassetto",
