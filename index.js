@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
     res.send('Welcome to the DB app!');
 });
 
+app.get('/conn', (req, res) => {
+    res.send(process.env.DATABASE_URL);
+});
+
 app.get('/db', (req, res) => {
     pool.connect(function (err, client, done) {
         if (err) {
