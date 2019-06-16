@@ -12,6 +12,13 @@ const pool = new pg.Pool({
     ssl: true
 });
 
+// enable CORS for service
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 // register JSON parser middlewear
 app.use(bodyParser.json());
 
